@@ -1,45 +1,71 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<style type="text/css">
-			*{
-				margin: 0;
-				padding: 0;
-			}
-			ul{
-				width: 908px;
-				height: 46px;
-				background: aliceblue;
-			}
-			ul li{
-				float: left;
-				list-style: none;
-				font-size: 18px;
-				line-height: 46px;
-			}
-			ul li a{
-				text-decoration: none;
-				color: #000000;
-				padding: 0 14px;
-			}
-			ul li a:hover{
-				color: orangered;
-			}
-		</style>
-	</head>
-	<body>
-		<ul>
-			<li><a href="">It培训班</a></li>
-			<li><a href="">在线网课</a></li>
-			<li><a href="">教学服务</a></li>
-			<li><a href="">就业服务</a></li>
-			<li><a href="">学员薪资</a></li>
-			<li><a href="">师资团队</a></li>
-			<li><a href="">认证考试</a></li>
-			<li><a href="">图书教材</a></li>
-			<li><a href="">关于我们</a></li>
-		</ul>
-	</body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>闪亮的心心</title>
+  <style>  
+    input {
+      background-color: rgb(146, 146, 231);
+      border: 1px dotted yellow;    
+      color: aliceblue;
+    }
+    #dv {    
+      border: 2px dotted yellow;
+      background-color: black;
+    }
+    span{
+      position: absolute;
+      font-size: 20px;
+    }
+    .cls{
+      background-color: #000;
+    }
+    #font{
+    	font-family: "微软雅黑";
+    	font-size: 20px;
+    	color: crimson;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="无论白昼&&黑夜" id="off"  class="cls">
+  <input type="button" name="" id="star" value="我的世界希望有你">
+  <div id="font">
+  	<p>何玉杰，I love you forever </p>
+  </div>
+  <div id="dv">
+  </div>
+  <script src="common.js"></script>
+  <script>
+   document.getElementById("off").onclick=function(){
+     document.body.className=document.body.className!="cls"?"cls":"";
+   }
+    document.getElementById("star").onclick = function () {   
+       setInterval(function () {       
+        document.getElementById("dv").innerHTML="<span>❤</span>";
+        var span=document.querySelector("span");
+        var dv=document.getElementById("dv");
+
+        for(i=0;i<100;i++){
+          var sp= span.cloneNode(true);
+           dv.appendChild(sp);
+
+           var r = parseInt(Math.random() *256);
+           var g = parseInt(Math.random() * 256); 
+           var b = parseInt(Math.random() * 256);
+           var y = parseInt(Math.random() * 1240);
+           var x = parseInt(Math.random() *600);
+
+           document.getElementById("dv").firstElementChild.style.color="rgb("+r+","+g+","+b+")";
+           document.getElementById("dv").firstElementChild.style.left = y + "px";
+           document.getElementById("dv").firstElementChild.style.top = x + "px";
+        }       
+      },500);    
+    };
+  </script>
+</body>
+
 </html>
